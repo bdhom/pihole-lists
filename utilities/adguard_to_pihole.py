@@ -4,4 +4,5 @@ with open("adguard-blocklist.txt", "r") as input_file, open("blocklist.txt", "w"
         stripped = line.strip()
         if stripped.startswith("||"):
             domain = stripped.lstrip("||").split("^")[0]
-            output_file.write(domain + "\n")
+            output_file.write("0.0.0.0 "+domain + "\n")
+            output_file.write("0.0.0.0 www."+domain + "\n")
